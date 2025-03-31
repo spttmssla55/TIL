@@ -1,11 +1,11 @@
 # **백승범 깃 허브 종합**
 
 
-`언어 비중`
+## 언어 비중
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=spttmssla55)](https://github.com/anuraghazra/github-readme-stats)
 
 
-`총점`
+## 총점
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=spttmssla55&hide=contribs,prs&show_icons=true&theme=테마)
 
 
