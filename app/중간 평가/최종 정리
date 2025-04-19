@@ -1,18 +1,19 @@
 
-0장 플러터 개발 환경 준비하기 : 2문항
+0장 플러터 개발 환경 준비하기
 앱 개발 방식
 - 네이티브 방식 : IOS나 안드로이드 같은 플랫폼 자체에서 제공
 - 하이브리드 방식 : 웹 사이트로 만든 앱 // 앱 처럼 보이지만 웹 사이트가 들어가 있는 것
 - 크로스 플랫폼 방식 : 안드로이드나 ios 앱을 한 번에 만들 수 있음
 
 플러터 특징
--  구글이 만들었고 크로스 플랫폼 방식을 사용
+- 구글이 만들었고 크로스 플랫폼 방식을 사용
 - 진입 장법 낮음, 예쁜 UI, 높은 네이티브 성능, 개발도구 지원
 
 1장 생애 첫 모바일 앱 생성하기
 환경 구성 검사
 - 앱 생성하려면 먼저 "환경 구성 검사"를 해야하는데 flutter가 제대로 설치 됐는지 확인하는 방법은 많다
-1.  flutter doctor를 터미널에 작성,  // 2. flutter_app > test > pubspec.yaml 에 들어가면 왼쪽 위에 flutter doctor 클릭,  //  flutter sdk 환경변수에 추가 안해도 됨. // 저 자세한 결과를 알고 싶다면 flutter doctor --verbose
+1.  flutter doctor를 터미널에 작성,  // 2. flutter_app > test > pubspec.yaml 에 들어가면 왼쪽 위에 flutter doctor 클릭,  
+			//  flutter sdk 환경변수에 추가 안해도 됨. // 저 자세한 결과를 알고 싶다면 flutter doctor --verbose
 
 2장 다트 문법 : 10문항
 변수타입 : 1. int: 정수  // 2. double : 실수   // 3. String : 문자열   // 4. bool : 참 또는 거짓
