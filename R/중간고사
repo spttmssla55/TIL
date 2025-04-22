@@ -1,0 +1,144 @@
+1. 벡터 문제 - 날짜 활용 문제
+1-1 as.Date() 함수
+date1 <- as.Date("2025-04-23")  # 문자열을 Date 객체로 변환
+print(date1)
+
+1-2 POSIXct와 POSIXlt 사용
+POSIXct: 초 단위로 날짜와 시간을 다룸.
+POSIXlt: 날짜를 연, 월, 일, 시, 분 등 구성 요소별로 접근 가능.
+now <- Sys.time()  # 현재 시간
+lt_now <- as.POSIXlt(now)  # POSIXlt로 변환
+
+# 연도, 월, 요일 등을 쉽게 접근
+print(lt_now$year + 1900)  # 연도 (1900년 기준)
+print(lt_now$mon + 1)      # 월 (0부터 시작)
+print(lt_now$mday)         # 날짜 (일)
+print(lt_now$wday)         # 요일 (0: 일요일, 1: 월요일, ...)
+
+1-3. seq() 함수
+날짜 범위를 자동 생성할 때 유용.
+dates <- seq(from = as.Date("2025-04-01"), by = "day", length.out = 5)  # 5일 간의 날짜 생성
+
+1-4 rep() 함수반복을 위한 함수입니다
+result <- rep(1:3, times = 2)
+# 출력: [1] 1 2 3 1 2 3
+result <- rep(c(1, 2, 3), each = 3)
+# 출력: [1] 1 1 1 2 2 2 3 3 3
+
+1-5 wday() 함수
+요일을 추출할 때 사용.
+date <- as.Date("2025-04-23")
+day_of_week <- wday(date)  # 요일 숫자 (1: Sunday, 7: Saturday)
+
+1-6 format() 함수
+날짜 형식을 변경할 때 사용. 원하는 형식으로 날짜를 변환할 수 있음.
+formatted_date <- format(as.Date("2025-04-23"), "%Y-%m-%d")  # 날짜를 "YYYY-MM-DD" 형식으로 변경
+print(formatted_date)
+2. 연산자 활용
+2-1 기본 연산자
+벡터, 숫자 간의 산술 연산에서 사용되는 기본 연산자들 (+, -, *, / 등).
+a <- 10
+b <- 20
+result <- a + b  # 덧셈
+print(result)
+2-2 벡터 연산자
+ver1 = c(1, 2, 3)
+ver1 = c(4, 5, 6)
+a = ver1 + ver2
+2-3 논리 연산자
+==, !=, <, >, <=, >=: 조건에 맞는 필터링이나 비교 연산을 할 때 사용.
+3. 벡터 활용 함수
+3-1 length() 함수
+벡터의 길이를 구할 때
+vec = c(1, 2, 3, 4)
+length(vec)
+3-2 sum() 함수
+합을 구할 때
+sum(vec)
+3-3 mean() 함수
+평균값을 구할 때
+mean(vec)
+3-4 min() / max() 함수
+최소값과 최대값을 구할 때
+min(vec)
+max(vec)
+setdiff(v1, v2)    # v1에는 있지만 v2에는 없는 요소 출력(차집합)
+intersect(v1,v2)  # v1과 v2에 공통적인 요소 출력(교집합)
+union(v1, v3)    # 합집합 ( 복 값 삭제)
+c1[c(2,4)] <- toupper(c1[c(2,4)])  # 대문자로 변경
+str()			# 타입이랑 안에 들어있는 값들 확인 
+as.factor(c1)		# factor 타입으로 면경 as.integer 정수타입 변경 등
+append(as.character(d1), "2022-02-29", after=59)   # after를 통해 그 뒤에 값을 넣음
+class(v2)		# 타입 검사
+새로운 행과 열 추가 : rbind(), cbind()
+m4 = rbind(m4, c(11,12,13))		# 가로로  생김
+m4 = cbind(m4, c(20,21,22))		# 세로로 생김
+5. 리스트 활용 함수
+5-1 리스트 생성
+여러 데이터 타입을 하나의 객체로 결합할 때 사용
+my_list = list(name = “Baek”, age = 24, scores = c(90, 80, 70))
+
+5-2 리스트 요소 접근
+각 요소에 접근할 때 $ 또는 [[]]를 사용
+my_list$name
+my_list[[“age”]]
+
+5-3 리스트 길이
+원소 개수 확인
+length(my_list)       # 출력   -- > 3
+
+
+6. 데이터 프레임을 만드는 2가지 방법
+6-1 data.frame() 함수
+기본적인 데이터 프래임 생성
+df = data.frame(
+	name = c(“Alice”, “Bob”, “Charlie”),
+	age = c(25, 30, 35),
+	score = c(90, 80, 70)
+	)
+
+
+
+
+
+
+6-2 각 컬럼(라벨)별로 먼저 생성 후 data.frame으로 모든 컬럼을 합침
+no = c(1,2,3,4)
+name = c('Apple', 'Banana', 'Peach', 'Graph')
+price = c(500, 200, 100, 300)
+qty = c(5,2,4,7)
+
+sales = data.frame(NO=no, NAME=name, PRICE=price, QTY=qty)
+
+
+
+
+6-3. 행렬로 생성
+sales2 = matrix(c(1,'Apple',500,5,
+                 2,'Peach',200,2,
+                 3,'Banana',50, 4,
+                 4,'Graph',100,7),4, by = T)
+
+d1 = data.frame(sales2)
+names(d1) = c('NO', 'NAME', 'PRICE', 'QTY')
+
+
+# 안타율 컬럼 생성 : 안타 / 타수 구해서 할푼리로 출력
+d1 %>% 
+  select(선수명, 팀, 경기, 안타, 타수) %>% 
+  mutate(안타율 = round(안타 / 타수, 3)) %>% 
+  arrange(desc(안타율))
+
+                  # across
+d1 %>% 
+  group_by(팀) %>% 
+  dplyr::summarise(across(경기, ~mean(.,na.rm=T)))
+                  # across
+d1 %>% 
+  group_by(팀) %>% 
+  dplyr::summarise(across(c(경기, 타수), mean))
+
+원하는 조건만 검색 : subset()
+subset(sales, QTY <= 5)
+subset(sales, PRICE == 200)
+subset(sales, NAME == 'Apple')
