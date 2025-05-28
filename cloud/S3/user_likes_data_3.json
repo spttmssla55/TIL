@@ -1,0 +1,20 @@
+[
+    {
+        "user_id": "seungb1",
+        "product": "갤럭시워치",
+        "price": 40000,
+        "brand": "삼성"
+    },
+    {
+        "user_id": "minji02",
+        "product": "아이패드",
+        "price": 800000,
+        "brand": "애플"
+    },
+    {
+        "user_id": "jihoon03",
+        "product": "버즈",
+        "price": 120000,
+        "brand": "삼성"
+    }
+]
