@@ -167,7 +167,7 @@ def lambda_handler(event, context):
 ```
 ---
 # sgu-202563-seung
-
+- 단순 테스트용 람다, 아무 코드와 의존성 없음.
 ```python
 def lambda_handler(event, context):
     # Lambda 함수가 호출되면 항상 이 응답을 반환함
